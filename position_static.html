@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            height: 400px;
+            width: 400px;
+            position: fixed;
+            border: 10px solid black;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .box {
+            border: 1px solid black;
+            height: 100px;
+            width: 100px;
+         }
+        #div1 {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background-color: pink;
+            text-align: center;
+            line-height: 100px;
+        }
+        #div2 {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            background-color: palevioletred;
+            text-align: center;
+            line-height: 100px;
+        }
+        #div3 {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            background-color: palevioletred;
+            text-align: center;
+            line-height: 100px;
+        }
+        #div4 {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            background-color: pink;
+            text-align: center;
+            line-height: 100px;
+        }
+        #div5 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 100px;
+            background-color: violet;
+            transform: translate(-50%,-50%);
+        }                                                                                             
+    </style>
+</head>
+<body>
+    <h1>Position</h1>
+    <div id="container">
+        <div id="div1" class="box">Teste</div>
+        <div id="div2" class="box">Teste</div>
+        <div id="div3" class="box">Teste</div>
+        <div id="div4" class="box">Teste</div>
+        <div id="div5" class="box">Teste</div>
+    </div>
+</body>
+</html>
