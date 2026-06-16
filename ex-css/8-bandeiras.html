@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandeiras</title>
+    <style>
+        .bandeiras{
+            height: 400px;
+            width: 400px;
+            border: 1px solid black;
+            position: relative;
+        }
+        #japao{
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            height: 150px; 
+            width: 150px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        #alemanha1{
+            background-color: black;
+            height: 33.33%;
+            margin: 0;
+        } 
+        #alemanha2{
+            background-color: red;
+            height: 33.33%;
+            margin: 0;
+        } 
+        #alemanha3{
+            background-color: yellow;
+            margin: 0;
+            height: 33.33%;
+        }
+        #holanda1{
+            background-color: red;
+            height: 33.33%;
+            margin: 0;
+        }
+        #holanda2{
+            background-color: white;
+            margin: 0;
+            height: 33.33%;
+        }
+        #holanda3{
+            background-color: blue;
+            margin: 0;
+            height: 33.33%;
+        }
+        #italia1{
+            flex-direction: column;
+            width: 33.33%;
+            background-color: green;
+        }
+        #italia2{
+            flex: 1;
+            width: 33.33%;
+            background-color: white;
+        }
+        #italia3{
+            flex: 1;
+            width: 33.33%;
+            background-color: red;
+        }
+        #flex{
+            display: flex;
+        }
+        #verde{
+            background-color: green;
+        }
+        #verde{
+            background-color: green;
+        }
+        #brasil1{
+            background-color: yellow;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 200px;
+            width: 200px;
+            transform: translate(-50%,-50%) rotate(45deg);
+        }
+        #brasil2{
+            background-color: blue;
+            border-radius: 50%;
+            position: absolute;
+            height: 100px;
+            width: 100px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        #titulo{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="titulo">BANDEIRAS</h1>
+
+    <a href="#japao">Bandeira Japão</a><br>
+    <a href="#alemanha1">Bandeira Alemanha</a><br>
+    <a href="#holanda1">Bandeira Holanda</a><br>
+    <a href="#italia1">Bandeira Itália</a><br>
+    <a href="#brasil1">Bandeira Brasil</a><br>
+
+    <h1>Japão</h1>
+    <div class="bandeiras">
+        <div id="japao"></div>
+    </div>
+
+    <h1>Alemanha</h1>
+    <div class="bandeiras">
+        <div id="alemanha1"></div>
+        <div id="alemanha2"></div>
+        <div id="alemanha3"></div>
+    </div>
+    
+    <h1>Holanda</h1>
+    <div class="bandeiras">
+        <div id="holanda1"></div>
+        <div id="holanda2"></div>
+        <div id="holanda3"></div>
+    </div>
+
+    <h1>Itália</h1>
+    <div class="bandeiras" id="flex">
+        <div id="italia1"></div>
+        <div id="italia2"></div>
+        <div id="italia3"></div>
+    </div>
+
+    <h1>Brasil</h1>
+    <div class="bandeiras" id="verde">
+        <div id="brasil1"></div>
+        <div id="brasil2"></div>
+    </div>
+</body>
+</html>
