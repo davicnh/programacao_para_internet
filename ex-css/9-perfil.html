@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        img {
+            border-radius: 50%;
+            width: 150px;
+            border: 4px solid white;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .left {
+            width: 250px;
+            background-color: #2d2d2d;
+            color: white;
+            padding: 20px;
+        }
+
+        .right {
+            flex: 1;
+            background-color: white;
+            padding: 20px;
+        }
+
+        .cargo_linha {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <img src="./joana.png" alt="">
+            <h4>Pessoal</h4>
+            <hr>
+            <p>Nome<br>
+                Joana Barbosa</p>
+            <p>Endereço<br>
+                Rua da Paz, 250<br>
+                7100-011, Lisboa</p>
+            <p>Número de Telefone<br>
+                999999999999</p>
+            <p>Email<br>
+                exemplo@gmail.com</p>
+        </div>
+        <div class="right">
+            <h2>Joana Barbosa</h2>
+            <hr>
+            <p>Profissional com mais de três anos de experiência em marketing digital. Especialista em geração de leads,
+                criação de conteúdo e estratégias de crescimento online. Comunicativa, proativa e orientada a
+                resultados.</p>
+            <h3>Experiência Profissional</h3>
+            <hr>
+            <div class="cargo_linha">
+                <div>
+                    <h4>Analista de Marketing Digital</h4>
+                    <p>São Paulo</p>
+                </div>
+                <p>2021-2023</p>
+            </div>
+            <ul>
+                <li>Gestão de redes sociais</li>
+                <li>Criação de campanhas</li>
+                <li>Análise de métricas</li>
+            </ul>
+            <div class="cargo_linha">
+                <div>
+                    <h4>Assistente Comercial</h4>
+                    <p>São Paulo</p>
+                </div>
+                <p>2019-2021</p>
+            </div>
+            <ul>
+                <li>Atendimento ao cliente</li>
+                <li>Gestão de pedidos</li>
+                <li>Suporte à equipe de vendas</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

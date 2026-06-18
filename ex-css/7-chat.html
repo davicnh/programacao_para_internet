@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            position: relative;
+            height: auto;
+            width: 500px;
+            border: 2px solid black;
+            margin: auto;
+            padding-bottom: 90px;
+        }
+
+        .horario {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            margin-right: 50px;
+            font-size: 11px;
+            color: gray;
+        }
+
+        .pork {
+            float: left;
+        }
+
+        img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+        }
+
+        .anon {
+            float: right;
+        }
+
+        .bolha {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .mensagem_enviada {
+            background-color: #dcf8c6;
+            border: 1px;
+            text-align: right;
+            border: 1px solid #ccc;
+        }
+
+        .mensagem_recebida p {
+            margin-left: 50px;
+        }
+
+        .mensagem_enviada p {
+            margin-right: 50px;
+        }
+
+        .enviar {
+            border: 1px solid black;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            height: 80px;
+        }
+
+        button {
+            float: right;
+        }
+
+        .mensagem_recebida .bolha {
+            background-color: #f0f0f0;
+        }
+
+        .mensagem_enviada .bolha {
+            margin-left: auto;
+            padding-right: 50px;
+            background-color: #dcf8c6;
+        }
+
+        .mensagem_enviada .horario {
+            margin-right: 50px;
+            position: static;
+            display: block;
+        }
+
+        .mensagem_enviada {
+            margin-bottom: 8px;
+        }
+
+        .mensagem_recebida {
+            margin-bottom: 8px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .enviar p {
+            margin: 0;
+        }
+
+        .mensagem_enviada .nome {
+            padding-right: 5px;
+        }
+
+        .nome {
+            color: gray;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CHAT</h1>
+
+    <div class="container">
+        <div class="mensagem_recebida">
+            <small class="nome">John Pork</small>
+            <div class="bolha">
+                <img class="pork" src="./John_Pork.png" alt="johnpork">
+                <p id="mensagem1">Eai, vamos sair hoje?</p>
+                <span class="horario">20:50</span>
+            </div>
+        </div>
+
+        <div class="mensagem_enviada">
+            <small class="nome">Eu</small>
+            <div class="bolha">
+                <img class="anon" src="./anonimo.jpg" alt="">
+                <p id="mensagem2">Não sei, estou pensando ainda...</p>
+                <span class="horario">20:51</span>
+            </div>
+        </div>
+
+        <div class="mensagem_recebida">
+            <small class="nome">John Pork</small>
+            <div class="bolha">
+                <img class="pork" src="./John_Pork.png" alt="johnpork">
+                <p id="mensagem3">Prometo te fazer feliz como ninguém jamais fez...</p>
+                <span class="horario">20:51</span>
+            </div>
+        </div>
+
+        <div class="mensagem_enviada">
+            <small class="nome">Eu</small>
+            <div class="bolha">
+                <img class="anon" src="./anonimo.jpg" alt="">
+                <p id="mensagem4">Já cansei de você!</p>
+                <span class="horario">20:52</span>
+            </div>
+        </div>
+        <div class="enviar">
+            <p>Digite sua mensagem.</p>
+            <button>Enviar</button>
+        </div>
+    </div>
+</body>
+
+</html>
