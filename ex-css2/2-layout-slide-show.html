@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        .container{
+            display: flex;
+            height: 500px;
+            width: 100vw;
+            gap: 5px;
+        }
+        .container img {
+            flex-grow: 1;
+            object-fit: cover;
+            height: 100%;
+            transition: flex-grow 0.5s ease;
+            border-radius: 20px;
+        }
+        .container img:hover {
+            flex-grow: 3;
+        }
+        .img3{
+            flex-grow: 4;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>SLIDESHOW</h1>
+    <div class="container">
+        <img class="img1" src="https://picsum.photos/400/600?random=1" alt="img1">
+        <img class="img2" src="https://picsum.photos/400/600?random=2" alt="img2">
+        <img class="img3" src="https://picsum.photos/400/600?random=3" alt="img3">
+        <img class="img4" src="https://picsum.photos/400/600?random=4" alt="img4">
+        <img class="img5" src="https://picsum.photos/400/600?random=5" alt="img5">
+    </div>
+</body>
+
+</html>
