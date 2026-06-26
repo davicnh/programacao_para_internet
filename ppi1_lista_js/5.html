@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Números Primos</title>
+    </head>
+    <body>
+        <h1>Números Primos</h1>
+
+        <h2>Número inicial:</h2>
+        <input type="number" id="inicio">
+
+        <h2>Número final:</h2>
+        <input type="number" id="fim"><br>
+
+        <br><button onclick="primos()">Verificar</button>
+
+        <p id="resultado"></p>
+
+        <script>
+        function primos() {
+           let inicio = parseInt(document.getElementById("inicio").value);
+           let fim = parseInt(document.getElementById("fim").value);
+
+           let primos = [];
+           for (let i = inicio; i <= fim; i++) {
+                if (i < 2) {
+                    continue;
+                }
+
+                let ehPrimo = true;
+
+                for (let j = 2; j < i; j++) {
+                    if (i % j == 0) {
+                        ehPrimo = false;
+                        break;
+                    }
+                }
+
+                if (ehPrimo) {
+                    primos.push(i);
+                }
+            }
+
+            document.getElementById("resultado").innerHTML =
+                "Números primos: " + primos.join(", ");
+        }
+    </script>
+    </body>
+</html>
