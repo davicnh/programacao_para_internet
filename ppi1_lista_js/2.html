@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2</title>
+  </head>
+  <body>
+    <h1>Tipos em JS</h1>
+
+    <button onclick="executar()">Executar</button>
+
+    <p id="pstring"></p>
+    <p id="pnumber"></p>
+    <p id="pboolean"></p>
+    <p id="pundefined"></p>
+    <p id="pnull"></p>
+    <p id="pobject"></p>
+    <p id="parray"></p>
+    <script>
+      function executar() {
+        let nome = "Davi";
+        let idade = 21;
+        let ativo = true;
+        let cidade;
+        let telefone = null;
+        let tamanho = {
+          peso: 85,
+          altura: 1.88,
+        };
+        let disciplinas = ["Programação", "Banco de Dados", "Redes"];
+
+        document.getElementById("pstring").innerText = typeof nome;
+        document.getElementById("pnumber").innerText = typeof idade;
+        document.getElementById("pboolean").innerText = typeof ativo;
+        document.getElementById("pundefined").innerText = typeof cidade;
+        document.getElementById("pnull").innerText = typeof telefone;
+        document.getElementById("pobject").innerText = typeof tamanho;
+        document.getElementById("parray").innerText = typeof disciplinas;
+
+        let teste1 = "Davi" + 10;
+        console.log(teste1);
+
+        let teste2 = true * 10;
+        console.log(teste2);
+
+        let teste3 = false + 10;
+        console.log(teste3);
+      }
+    </script>
+  </body>
+</html>

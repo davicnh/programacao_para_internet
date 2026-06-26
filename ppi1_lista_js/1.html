@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>O que é JavaScript?</title>
+  </head>
+  <body>
+    <h1 id="principal">O que é JavaScript?</h1>
+
+    <h2 id="subtitulo">Motivação da criação do JavaScript:</h2>
+    <p id="texto">
+      O JavaScript foi criado para dar vida às páginas web. Antes dele, os sites
+      eram estáticos (só texto e imagens). Com JS, passou a ser possível criar
+      interações como cliques, validação de formulários, animações e mudanças
+      dinâmicas no conteúdo sem precisar recarregar a página.
+    </p>
+
+    <h2>Diferença entre execução no navegador e no servidor:</h2>
+    <p>
+      No navegador (front-end), o JavaScript roda dentro do ambiente do usuário
+      e manipula a interface da página (HTML e CSS). Já no servidor (como no
+      Node.js), ele roda “por trás”, lidando com banco de dados, autenticação,
+      regras de negócio e APIs, sem depender do navegador.
+    </p>
+
+    <h2>Conceito de sandbox no navegador:</h2>
+    <p>
+      Sandbox é um ambiente de segurança onde o JavaScript é executado de forma
+      isolada. Isso impede que o código tenha acesso direto ao sistema
+      operacional do usuário, como arquivos pessoais ou configurações do
+      computador, protegendo contra ações maliciosas.
+    </p>
+
+    <h2>Objetos globais como document, console e alert:</h2>
+    <p>
+      document: permite acessar e manipular elementos da página HTML (DOM).<br />
+      console: usado para depuração, mostrando mensagens e erros no console do
+      navegador.<br />
+      alert: exibe uma janela simples de mensagem para o usuário na tela.
+    </p>
+    
+    <h2>Hora Atual:</h2>
+    <p id="hora"></p>
+
+    <script>
+      console.log("Hello, world!");
+      alert("Hello, world!");
+      document.getElementById("hora").innerHTML = new Date().toLocaleTimeString();
+    </script>
+  </body>
+</html>
