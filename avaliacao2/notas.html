@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bloco de Notas</title>
+    <style>
+      h1 {
+        text-align: center;
+      }
+      .container {
+        display: flex;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      .editor {
+        flex: 1;
+        padding: 20px;
+      }
+      .lista {
+        width: 250px;
+        height: 100vh;
+        background: white;
+        padding: 20px;
+        border-right: 1px solid white;
+      }
+      .editor input,
+      .editor textarea {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+      .editor textarea {
+        height: 300px;
+      }
+      button {
+        padding: 8px 16px;
+        margin-right: 5px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        background-color: black;
+        color: white;
+      }
+      #listar p {
+        padding: 10px;
+        margin-top: 8px;
+        background: #f0f0f0;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .lista {
+        border-right: 2px solid #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bloco de Notas</h1>
+
+    <div class="container">
+      <div class="lista">
+        <h2>Notas</h2>
+        <button onclick="novaNota()">Nova Nota</button>
+        <div id="listar"></div>
+      </div>
+
+      <div class="editor">
+        <input type="text" id="titulo" placeholder="Título da nota" />
+        <textarea id="conteudo" placeholder="Digite sua nota..."></textarea>
+        <button onclick="salvarNota()">Salvar</button>
+        <button onclick="excluirNota()">Excluir</button>
+        <button onclick="listarNotas()">Voltar</button>
+      </div>
+    </div>
+    <script>
+      let notas = [];
+      let notaAtual = null;
+
+      const titulo = document.getElementById("titulo");
+      const conteudo = document.getElementById("conteudo");
+      const listar = document.getElementById("listar");
+
+      function novaNota() {
+        titulo.value = "";
+        conteudo.value = "";
+        notaAtual = null;
+      }
+
+      function carregarNotas() {
+        let dados = localStorage.getItem("notas");
+        if (dados) {
+          notas = JSON.parse(dados);
+        } else {
+          notas = [];
+        }
+      }
+
+      function listarNotas() {
+        listar.innerHTML = "";
+        notas.forEach((nota) => {
+          let item = document.createElement("p");
+          item.textContent = nota.titulo;
+
+          item.onclick = function () {
+            abrirNota(nota.id);
+          };
+
+          listar.appendChild(item);
+        });
+      }
+
+      function salvarNota() {
+        let tituloNota = titulo.value;
+        let conteudoNota = conteudo.value;
+        if (notaAtual == null) {
+          let novaNota = {
+            id: notas.length + 1,
+            titulo: tituloNota,
+            conteudo: conteudoNota,
+          };
+          notas.push(novaNota);
+          localStorage.setItem("notas", JSON.stringify(notas));
+          listarNotas();
+        } else {
+          let nota = notas.find((n) => n.id === notaAtual);
+          nota.titulo = tituloNota;
+          nota.conteudo = conteudoNota;
+          localStorage.setItem("notas", JSON.stringify(notas));
+          listarNotas();
+        }
+      }
+
+      function abrirNota(id) {
+        let nota = notas.find((n) => n.id === id);
+
+        titulo.value = nota.titulo;
+        conteudo.value = nota.conteudo;
+
+        notaAtual = nota.id;
+      }
+
+      function excluirNota() {
+        let confirmacao = confirm("Deseja excluir esta nota?");
+        if (confirmacao) {
+          notas = notas.filter((n) => n.id !== notaAtual);
+          localStorage.setItem("notas", JSON.stringify(notas));
+          listarNotas();
+        }
+      }
+
+      carregarNotas();
+      listarNotas();
+    </script>
+  </body>
+</html>
