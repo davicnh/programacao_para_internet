@@ -1,55 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contato</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <a href="curriculo.html">Voltar para o currículo</a>
 
     <h1>Formulário de Contato</h1>
 
     <form>
+      <label for="nome">Nome:</label><br />
+      <input
+        type="text"
+        id="nome"
+        name="nome"
+        placeholder="Digite seu nome"
+        required
+      />
+      <br /><br />
 
-        <label for="nome">Nome:</label><br>
-        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
-        <br><br>
-        
-        <label for="email">E-mail:</label><br>
-        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
-        <br><br>
-        
-        <label for="assunto">Assunto:</label><br>
-        <input type="text" id="assunto" name="assunto" placeholder="Digite o assunto">
-        <br><br>
-        
-        <label for="estado">Estado:</label><br>
-        <select id="estado" name="estado">
+      <label for="email">E-mail:</label><br />
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Digite seu e-mail"
+        required
+      />
+      <br /><br />
 
-            <option value="">Selecione um estado</option>
+      <label for="assunto">Assunto:</label><br />
+      <input
+        type="text"
+        id="assunto"
+        name="assunto"
+        placeholder="Digite o assunto"
+      />
+      <br /><br />
 
-            <option value="SC">Santa Catarina</option>
-            <option value="PR">Paraná</option>
-            <option value="RS">Rio Grande do Sul</option>
-            <option value="SP">São Paulo</option>
-            <option value="RJ">Rio de Janeiro</option>
+      <label for="estado">Estado:</label><br />
+      <select id="estado" name="estado">
+        <option value="">Selecione um estado</option>
 
-        </select>
-        <br><br>
+        <option value="SC">Santa Catarina</option>
+        <option value="PR">Paraná</option>
+        <option value="RS">Rio Grande do Sul</option>
+        <option value="SP">São Paulo</option>
+        <option value="RJ">Rio de Janeiro</option>
+      </select>
+      <br /><br />
 
-        
-        <label for="mensagem">Mensagem:</label><br>
-        <textarea id="mensagem" name="mensagem" rows="5" cols="40" placeholder="Digite sua mensagem"></textarea>
-        <br><br>
+      <label for="mensagem">Mensagem:</label><br />
+      <textarea
+        id="mensagem"
+        name="mensagem"
+        rows="5"
+        cols="40"
+        placeholder="Digite sua mensagem"
+      ></textarea>
+      <br /><br />
 
-        <button type="submit">Enviar</button>
-
+      <button type="submit">Enviar</button>
     </form>
-
-</body>
-
+  </body>
 </html>

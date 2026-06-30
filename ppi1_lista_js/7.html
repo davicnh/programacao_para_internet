@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mudança de cor</title>
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="cor()">Alterar cor de fundo</button>
+    <script>
+      function cor() {
+        let r = Math.floor(Math.random() * 256);
+        let g = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() * 256);
+        document.body.style.backgroundColor =
+          "rgb(" + r + "," + g + "," + b + ")";
+      }
+    </script>
+  </body>
+</html>

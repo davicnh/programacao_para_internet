@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alteração Aleatória</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .container {
+        display: flex;
+      }
+      .container div {
+        width: 150px;
+        height: 200px;
+        background: #ccc;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="n1"></div>
+      <div class="n2"></div>
+      <div class="n3"></div>
+      <div class="n4"></div>
+      <div class="n5"></div>
+    </div>
+
+    <script>
+      let elementos = document.querySelectorAll(".container div");
+      function mudar() {
+        elementos.forEach((el) => {
+          let r = Math.floor(Math.random() * 256);
+          let g = Math.floor(Math.random() * 256);
+          let b = Math.floor(Math.random() * 256);
+          el.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+        });
+      }
+      document.addEventListener("keydown", function (e) {
+        if (e.key == " ") {
+          mudar();
+        }
+      });
+    </script>
+  </body>
+</html>

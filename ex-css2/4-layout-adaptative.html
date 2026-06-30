@@ -1,105 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Layout Adaptative</title>
     <style>
+      .container {
+        color: black;
+        text-align: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        grid-template-areas: none;
+      }
+
+      .n1 {
+        background-color: yellow;
+        height: 60px;
+        grid-area: header;
+      }
+
+      .n2 {
+        background-color: red;
+        height: 60px;
+        grid-area: banner;
+      }
+
+      .n3 {
+        background-color: green;
+        height: 60px;
+        grid-area: left;
+      }
+
+      .n4 {
+        background-color: blue;
+        height: 400px;
+        grid-area: main;
+      }
+
+      .n5 {
+        background-color: yellow;
+        height: 60px;
+        grid-area: right;
+      }
+
+      .n6 {
+        background-color: green;
+        height: 60px;
+        grid-area: low;
+      }
+
+      .n7 {
+        background-color: blue;
+        height: 60px;
+        grid-area: footer;
+      }
+
+      .container div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Arial", "Helvetica", sans-serif;
+        font-size: 1.1rem;
+        font-weight: bold;
+      }
+
+      @media screen and (min-width: 768px) {
         .container {
-            color: black;
-            text-align: center;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
-            grid-template-areas: none;
-        }
-
-        .n1 {
-            background-color: yellow;
-            height: 60px;
-            grid-area: header;
-        }
-
-        .n2 {
-            background-color: red;
-            height: 60px;
-            grid-area: banner;
-        }
-
-        .n3 {
-            background-color: green;
-            height: 60px;
-            grid-area: left;
-        }
-
-        .n4 {
-            background-color: blue;
-            height: 400px;
-            grid-area: main;
-        }
-
-        .n5 {
-            background-color: yellow;
-            height: 60px;
-            grid-area: right;
-        }
-
-        .n6 {
-            background-color: green;
-            height: 60px;
-            grid-area: low;
-        }
-
-        .n7 {
-            background-color: blue;
-            height: 60px;
-            grid-area: footer;
+          grid-template-columns: 200px 1fr 200px;
+          grid-template-areas:
+            "header header header"
+            "left   banner right"
+            "left   main   right"
+            "left   low    right"
+            "footer footer footer";
+          height: 100vh;
+          grid-template-rows: 60px 60px 1fr 60px 60px;
         }
 
         .container div {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Arial', 'Helvetica', sans-serif;
-            font-size: 1.1rem;
-            font-weight: bold;
+          height: auto;
+          padding: 20px;
+          font-family: "Arial", "Helvetica", sans-serif;
+          font-size: 1.1rem;
+          font-weight: bold;
         }
-
-        @media screen and (min-width: 768px) {
-            .container {
-                grid-template-columns: 200px 1fr 200px;
-                grid-template-areas:
-                    "header header header"
-                    "left   banner right"
-                    "left   main   right"
-                    "left   low    right"
-                    "footer footer footer";
-                height: 100vh;
-                grid-template-rows: 60px 60px 1fr 60px 60px;
-            }
-
-            .container div {
-                height: auto;
-                padding: 20px;
-                font-family: 'Arial', 'Helvetica', sans-serif;
-                font-size: 1.1rem;
-                font-weight: bold;
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <div class="n1">Header</div>
-        <div class="n2">Banner</div>
-        <div class="n3">Left Aside</div>
-        <div class="n4">Main Content</div>
-        <div class="n5">Right Aside</div>
-        <div class="n6">Low Content</div>
-        <div class="n7">Footer</div>
+      <div class="n1">Header</div>
+      <div class="n2">Banner</div>
+      <div class="n3">Left Aside</div>
+      <div class="n4">Main Content</div>
+      <div class="n5">Right Aside</div>
+      <div class="n6">Low Content</div>
+      <div class="n7">Footer</div>
     </div>
-</body>
-
+  </body>
 </html>
