@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cronômetro</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background: #2d2d2d;
+        color: white;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .container {
+        display: flex;
+        gap: 20px;
+      }
+
+      .cronometro {
+        background: #444;
+        padding: 40px;
+        border-radius: 8px;
+        flex: 1;
+        text-align: center;
+      }
+
+      .display {
+        font-size: 60px;
+        margin-bottom: 20px;
+      }
+
+      .paradas {
+        background: #ddd;
+        color: black;
+        padding: 20px;
+        border-radius: 8px;
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Cronômetro</h1>
+
+    <div class="container">
+      <div class="cronometro">
+        <div class="display">00:00:00</div>
+        <button onclick="iniciar()">Iniciar</button>
+        <button onclick="pausar()">Pausar</button>
+        <button onclick="parar()">Parar</button>
+      </div>
+
+      <div class="paradas">
+        <h2>Paradas</h2>
+        <div id="paradas"></div>
+      </div>
+    </div>
+    <script>
+      let horas = 0;
+      let minutos = 0;
+      let segundos = 0;
+      let intervalo = null;
+      let tempo = null;
+
+      function iniciar() {
+        tempo = new Date();
+        intervalo = setInterval(function () {
+          let agora = new Date();
+          let decorrido = agora - tempo;
+          segundos = Math.floor(decorrido / 1000) % 60;
+          minutos = Math.floor(decorrido / 60000) % 60;
+          horas = Math.floor(decorrido / 3600000);
+          atualizar();
+        }, 1000);
+      }
+
+      function pausar() {
+        clearInterval(intervalo);
+        let item = document.createElement("p");
+        item.textContent = horas + ":" + minutos + ":" + segundos;
+        document.getElementById("paradas").appendChild(item);
+      }
+
+      function parar() {
+        clearInterval(intervalo);
+        horas = 0;
+        minutos = 0;
+        segundos = 0;
+        atualizar();
+      }
+
+      function atualizar() {
+        document.querySelector(".display").textContent =
+          horas + ":" + minutos + ":" + segundos;
+      }
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key == "a") {
+          iniciar();
+        }
+        if (e.key == "s") {
+          pausar();
+        }
+        if (e.key == "d") {
+          parar();
+        }
+      });
+    </script>
+  </body>
+</html>
